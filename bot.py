@@ -1,9 +1,8 @@
-import os
 import telebot
 import requests
 
-API_KEY = os.getenv('TELEGRAM_API_KEY')
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+API_KEY = '7482301429:AAGqW25r7oGert4wmqEYWGwcN5qrvgjmaMc'
+GEMINI_API_KEY = 'AIzaSyD5UcnXASfVpUa6UElDxYqZU6hxxwttj5M'
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'
 
 bot = telebot.TeleBot(API_KEY)
@@ -24,7 +23,7 @@ def handle_message(message):
     user_text = message.text.lower()
 
     # Обработка вопроса "как тебя звать?"
-    if "как тебя звать" in user_text or "как тебя зовут" in user_text:
+    if "как тебя звать" in user_text или "как тебя зовут" in user_text:
         response_text = f"меня зовут фоззи"
         bot.reply_to(message, response_text)
     else:
