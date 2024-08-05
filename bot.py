@@ -1,8 +1,9 @@
+import os
 import telebot
 import requests
 
-API_KEY = '7482301429:AAGqW25r7oGert4wmqEYWGwcN5qrvgjmaMc'
-GEMINI_API_KEY = 'AIzaSyD5UcnXASfVpUa6UElDxYqZU6hxxwttj5M'
+API_KEY = os.getenv('TELEGRAM_API_KEY')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'
 
 bot = telebot.TeleBot(API_KEY)
@@ -47,14 +48,14 @@ def get_gemini_response(question):
     if response.status_code == 200:
         data = response.json()
         result = data['candidates'][0]['content']['parts'][0]['text']
-        
+
         # Удаление точки в конце текста
         if result.endswith('.'):
             result = result[:-1]
-        
+
         return result
     else:
         return "извините, произошла ошибка при обработке запроса"
 
 if __name__ == "__main__":
-    bot.polling()  
+    bot.polling()
