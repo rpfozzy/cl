@@ -1,0 +1,11 @@
+{
+  "builds": [
+    {
+      "src": ".",
+      "use": "@railway/python"
+    }
+  ],
+  "deploy": {
+    "start": "python bot.py"
+  }
+}
