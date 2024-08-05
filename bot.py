@@ -1,7 +1,7 @@
 import telebot
 import requests
 
-API_KEY = '6247500066:AAExG_cnUnBsw9QyAt_ojxv2l_BeXP0BE8Q'
+API_KEY = '7482301429:AAGqW25r7oGert4wmqEYWGwcN5qrvgjmaMc'
 GEMINI_API_KEY = 'AIzaSyD5UcnXASfVpUa6UElDxYqZU6hxxwttj5M'
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'
 
